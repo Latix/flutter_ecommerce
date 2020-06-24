@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './screens/product_details_screen.dart';
 import './widgets/drawer.dart';
 import './widgets/image_carousel.dart';
 import './widgets/horizontal_list.dart';
@@ -9,6 +10,13 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomePage(),
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+        accentColor: Colors.redAccent,
+      ),
+      routes: {
+        ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
+      },
     ),
   );
 }
@@ -26,7 +34,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Colors.red,
+        backgroundColor: Theme.of(context).primaryColor,
         title: Text('FashApp'),
         actions: <Widget>[
           IconButton(
