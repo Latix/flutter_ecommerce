@@ -19,6 +19,30 @@ class _ProductsState extends State<Products> {
       "picture": "images/products/blazer2.jpeg",
       "old_price": 100,
       "price": 50
+    },
+    {
+      "name": "Dress",
+      "picture": "images/products/dress1.jpeg",
+      "old_price": 100,
+      "price": 50
+    },
+    {
+      "name": "Dress 2",
+      "picture": "images/products/dress2.jpeg",
+      "old_price": 100,
+      "price": 50
+    },
+    {
+      "name": "Hills",
+      "picture": "images/products/hills1.jpeg",
+      "old_price": 100,
+      "price": 50
+    },
+    {
+      "name": "Hills 2",
+      "picture": "images/products/hills2.jpeg",
+      "old_price": 100,
+      "price": 50
     }
   ];
   @override
@@ -45,11 +69,12 @@ class SingleProduct extends StatelessWidget {
   final productOldPrice;
   final productPrice;
 
-  SingleProduct(
-      {this.productName,
-      this.productPicture,
-      this.productOldPrice,
-      this.productPrice});
+  SingleProduct({
+    this.productName,
+    this.productPicture,
+    this.productOldPrice,
+    this.productPrice,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -70,25 +95,25 @@ class SingleProduct extends StatelessWidget {
             child: GridTile(
               footer: Container(
                 color: Colors.white70,
-                child: ListTile(
-                  leading: Text(
-                    productName,
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  title: Text(
-                    "\$${productPrice.toString()}",
-                    style: TextStyle(
-                        color: Colors.redAccent, fontWeight: FontWeight.w800),
-                    textAlign: TextAlign.right,
-                  ),
-                  subtitle: Text(
-                    "\$${productOldPrice.toString()}",
-                    style: TextStyle(
-                        color: Colors.black54,
-                        fontWeight: FontWeight.w800,
-                        decoration: TextDecoration.lineThrough),
-                    textAlign: TextAlign.right,
-                  ),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Text(
+                        productName,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.0,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      "\$${productPrice.toString()}",
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               child: Image.asset(
