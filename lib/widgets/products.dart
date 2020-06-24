@@ -61,7 +61,10 @@ class SingleProduct extends StatelessWidget {
             onTap: () => Navigator.of(context).pushNamed(
               ProductDetailScreen.routeName,
               arguments: {
-                'productName': productName
+                'productName': productName,
+                'productPicture': productPicture,
+                'productOldPrice': productOldPrice,
+                'productPrice': productPrice
               },
             ),
             child: GridTile(

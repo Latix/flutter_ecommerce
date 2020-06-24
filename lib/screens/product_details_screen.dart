@@ -37,7 +37,12 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         children: <Widget>[
           Container(
             height: 300,
-            color: Colors.black,
+            child: GridTile(
+              child: Container(
+                color: Colors.white,
+                child: Image.asset(product['productPicture']),
+              ),
+            ),
           ),
         ],
       ),
