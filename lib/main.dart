@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './screens/product_details_screen.dart';
 import './screens/home_page_screen.dart';
+import './screens/cart_screen.dart';
 
 void main() {
   runApp(
@@ -13,6 +14,7 @@ void main() {
       ),
       routes: {
         ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
+        CartScreen.routeName: (ctx) => CartScreen(),
       },
     ),
   );

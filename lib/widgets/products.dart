@@ -47,18 +47,21 @@ class _ProductsState extends State<Products> {
   ];
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      itemCount: productList.length,
-      gridDelegate:
-          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-      itemBuilder: (BuildContext ctx, int index) {
-        return SingleProduct(
-          productName: productList[index]['name'],
-          productPicture: productList[index]['picture'],
-          productOldPrice: productList[index]['old_price'],
-          productPrice: productList[index]['price'],
-        );
-      },
+    return Container(
+      height: 600,
+      child: GridView.builder(
+        itemCount: productList.length,
+        gridDelegate:
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        itemBuilder: (BuildContext ctx, int index) {
+          return SingleProduct(
+            productName: productList[index]['name'],
+            productPicture: productList[index]['picture'],
+            productOldPrice: productList[index]['old_price'],
+            productPrice: productList[index]['price'],
+          );
+        },
+      ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../screens/cart_screen.dart';
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -52,7 +53,7 @@ class AppDrawer extends StatelessWidget {
                 ),
                 Divider(),
                 InkWell(
-                  onTap: () {},
+                  onTap: () => Navigator.of(context).pushNamed(CartScreen.routeName),
                   child: ListTile(
                     title: Text('Shopping Cart'),
                     leading: Icon(
