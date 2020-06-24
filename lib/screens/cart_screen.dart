@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/cart_products.dart';
 
 class CartScreen extends StatefulWidget {
   static const routeName = '/cart';
@@ -53,7 +54,7 @@ class _CartScreenState extends State<CartScreen> {
           ],
         ),
       ),
-      body: Center(child: Text('Cart')),
+      body: CartProducts(),
     );
   }
 }
