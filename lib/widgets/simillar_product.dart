@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import '../widgets/single_product.dart';
+import '../widgets/simillar_single_product.dart';
 
-class Products extends StatefulWidget {
+class SimilarProducts extends StatefulWidget {
   @override
-  _ProductsState createState() => _ProductsState();
+  _SimilarProductsState createState() => _SimilarProductsState();
 }
 
-class _ProductsState extends State<Products> {
+class _SimilarProductsState extends State<SimilarProducts> {
   var productList = [
     {
       "name": "Blazer",
@@ -17,18 +17,6 @@ class _ProductsState extends State<Products> {
     {
       "name": "Blazer 2",
       "picture": "images/products/blazer2.jpeg",
-      "old_price": 100,
-      "price": 50
-    },
-    {
-      "name": "Dress",
-      "picture": "images/products/dress1.jpeg",
-      "old_price": 100,
-      "price": 50
-    },
-    {
-      "name": "Dress 2",
-      "picture": "images/products/dress2.jpeg",
       "old_price": 100,
       "price": 50
     },
@@ -52,7 +40,7 @@ class _ProductsState extends State<Products> {
       gridDelegate:
           SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       itemBuilder: (BuildContext ctx, int index) {
-        return SingleProduct(
+        return SimillarSingleProduct(
           productName: productList[index]['name'],
           productPicture: productList[index]['picture'],
           productOldPrice: productList[index]['old_price'],

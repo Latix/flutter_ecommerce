@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/simillar_product.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   static const routeName = '/product-details';
@@ -16,18 +17,14 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Theme.of(context).primaryColor,
-        title: Text(product['productName'].toString()),
+        title: InkWell(
+          onTap: () => Navigator.of(context).pushNamed('/'),
+          child: Text('FashApp'),
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(
               Icons.search,
-              color: Colors.white,
-            ),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.shopping_cart,
               color: Colors.white,
             ),
             onPressed: () {},
@@ -260,7 +257,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             ],
           ),
 
-          // Add Product Condition 
+          // Add Product Condition
           Row(
             children: <Widget>[
               Padding(
@@ -275,6 +272,15 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 child: Text("NEW"),
               ),
             ],
+          ),
+          Divider(),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("Similar products"),
+          ),
+          Container(
+            height: 400,
+            child: SimilarProducts(),
           ),
         ],
       ),
