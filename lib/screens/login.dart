@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       "Fashion App",
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 25,
+                        fontSize: 40,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'Deftone'
                       ),
