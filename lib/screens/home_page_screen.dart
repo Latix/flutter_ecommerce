@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePageScreen> {
         ],
       ),
       drawer: AppDrawer(),
-      body: ListView(
+      body: Column(
         children: <Widget>[
           // Image Carousel
           ImageCarousel(),
@@ -53,8 +53,7 @@ class _HomePageState extends State<HomePageScreen> {
             padding: const EdgeInsets.all(20.0),
             child: Text('Recent Products'),
           ),
-          Container(
-            height: 320,
+          Flexible(
             child: Products(),
           ),
         ],
